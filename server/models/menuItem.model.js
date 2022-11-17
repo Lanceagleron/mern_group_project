@@ -14,7 +14,9 @@ const MenuItemSchema = new mongoose.Schema({
         required: [true, "{PATH} is required."]
     },
     price: {
-        type: mongoose.Types.Decimal128,
+        type: Number,
+        set: v => v*100,
+        get: v => (v/100).toFixed(2),
         required: [true, "{PATH} is required."]
     },
     inStock: {
@@ -25,7 +27,9 @@ const MenuItemSchema = new mongoose.Schema({
         type: String,
         required: [true, "{PATH} is required."]
     }
-}, { timestamps: true })
+}, { timestamps: true,
+    toJSON: { getters: true }
+ })
 
 const MenuItem = mongoose.model("MenuItem", MenuItemSchema);
 
