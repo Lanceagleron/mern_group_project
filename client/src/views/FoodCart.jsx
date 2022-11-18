@@ -2,8 +2,6 @@ import React from "react";
 import { Link, useLocation } from "react-router-dom";
 import Logo from './images/Logo.png'
 import Cart from './images/Cart.png'
-import axios from 'axios';
-import { useState } from "react";
 
 const FoodCart = (props) => {
     const { state } = useLocation();
@@ -12,7 +10,7 @@ const FoodCart = (props) => {
         console.log(id);
         console.log("remove button clicked")
     }
-    
+
     const calculateTotal = () => {
         let total = 0.00;
         if (state !== null) {
@@ -22,6 +20,7 @@ const FoodCart = (props) => {
         }
         return total.toFixed(2);
     }
+
     return (
         <>
         <div id='nav'>
@@ -42,7 +41,7 @@ const FoodCart = (props) => {
                     <tr>
                         <th>Item</th>
                         <th>Price</th>
-                        <th>Actions</th>
+                        {/* <th>Actions</th> */}
                     </tr>
                 </thead>
                 <tbody>
@@ -51,7 +50,7 @@ const FoodCart = (props) => {
                             <tr key={ index }>
                                 <td>{ item.name }</td>
                                 <td>{ item.price }</td>
-                                <td><button onClick={e => handleRemove(e, item._id) }>Remove</button></td>
+                                {/* <td><button onClick={e => handleRemove(e, item._id) }>Remove</button></td> */}
                             </tr>
                         ) : null
                     }

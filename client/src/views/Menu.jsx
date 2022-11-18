@@ -53,14 +53,10 @@ const Menu = (props) => {
                                 backgroundSize: 'cover',
                                 backgroundRepeat: 'no-repeat',
                                 backgroundPosition: 'center'}} className="itemCard" key={i}>
-                                    <div className='menuInfo'>
-                                        <input type="checkbox" id="item" className='checkBox' value={ eachItem._id } onChange={(e) => handleCheck(e) }/> <br />
-                                        <span>{eachItem.name}</span> <br />
-                                        <span>${eachItem.price}</span> <br />
                                         {
-                                            eachItem.inStock == true ? (
+                                            eachItem.inStock === true ? (
                                                 <div className='menuInfo'>
-                                                    <input type="checkbox" name="" id="item" className='checkBox'/> <br />
+                                                    <input type="checkbox" value={eachItem._id} className='checkBox' onChange={ e => handleCheck(e) }/> <br />
                                                     <span for="item">{eachItem.name}</span> <br />
                                                     <span>${eachItem.price}</span> <br />
                                                 </div>
@@ -71,10 +67,7 @@ const Menu = (props) => {
                                                     <span>${eachItem.price}</span> <br />
                                                 </div>
                                             )
-                                        }  
-                                    </div>
-                                    
-                                    
+                                        }
                             </div>
                         )})
                 }
