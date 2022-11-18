@@ -1,22 +1,38 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import Logo from './images/Logo.png'
 import Cart from './images/Cart.png'
+import axios from 'axios';
+import { useState } from "react";
 
 const FoodCart = (props) => {
-    // const { selectedItems } = props;
+    const { state } = useLocation();
 
+    const handleRemove = (e, id) => {
+        console.log(id);
+        console.log("remove button clicked")
+    }
+    
+    const calculateTotal = () => {
+        let total = 0.00;
+        if (state !== null) {
+            state.forEach(item => {
+                total += parseFloat(item.price)
+            });
+        }
+        return total.toFixed(2);
+    }
     return (
         <>
         <div id='nav'>
             <div id='navItems'>
                 <img src={Logo} alt="" id='logo'/>
-                <Link to={'/'} class='link link-border-underline'><h1 id='header'>Restaurant Name</h1></Link>
+                <Link to={'/'} className='link link-border-underline'><h1 id='header'>Restaurant Name</h1></Link>
             </div>
             <div id='navItems'>
-                <Link to={'/cart'} class='link link-border-underline'><img src={Cart} alt="" height={"30px"}/></Link>
-                <Link to={'/admin'} class='link link-border-underline'><h3>Admin</h3></Link>
-                <Link class='link link-border-underline'><h3>Login/Register</h3></Link>
+                <Link to={'/cart'} className='link link-border-underline'><img src={Cart} alt="" height={"30px"}/></Link>
+                <Link to={'/admin'} className='link link-border-underline'><h3>Admin</h3></Link>
+                <Link className='link link-border-underline'><h3>Login/Register</h3></Link>
             </div>
         </div>
         <main>
@@ -26,33 +42,25 @@ const FoodCart = (props) => {
                     <tr>
                         <th>Item</th>
                         <th>Price</th>
-                        <th>Quantity</th>
-                        <th></th>
+                        <th>Actions</th>
                     </tr>
                 </thead>
                 <tbody>
-                    {/* TODO Calculate total  */}
-                    {/* {
-                        selectedItems.map((item, index) => 
+                    {
+                        state ? state.map((item, index) => 
                             <tr key={ index }>
                                 <td>{ item.name }</td>
                                 <td>{ item.price }</td>
-                                <td>Quantity ??</td>
+                                <td><button onClick={e => handleRemove(e, item._id) }>Remove</button></td>
                             </tr>
-                        )
-                    } */}
-                    <tr>
-                        <td>Item 1</td>
-                        <td>$10.99</td>
-                        <td>1</td>
-                        <td><button>Remove</button></td>
-                    </tr>
+                        ) : null
+                    }
                 </tbody>
             </table>
             <div>
-                <h3>Total: ???</h3>
+                <h3>Total: ${ calculateTotal() }</h3>
                 <div>
-                    <button>Back to menu</button>
+                    <button><Link to='/menu'>Back to menu</Link></button>
                     <button>Checkout</button>
                 </div>
             </div>
