@@ -21,14 +21,12 @@ const Home = (props) => {
     <div id='nav'>
         <div id='navItems'>
             <img src={Logo} alt="" id='logo'/>
-            <Link to={'/'} class='link link-border-underline'><h1 id='header'>Restaurant Name</h1></Link>
+            <Link to={'/'} className='link link-border-underline'><h1 id='header'>Restaurant Name</h1></Link>
         </div>
-
         <div id='navItems'>
-            <Link class='link link-border-underline'>Login/Registration</Link>
-            <Link to={'/cart'} class='link link-border-underline'><img src={Cart} alt="" height={"30px"}/></Link>
-            <Link to={'/dev'} class='link link-border-underline'><h3>Admin</h3></Link>
-            <Link class='link link-border-underline'><h3>Login/Registration</h3></Link>
+            <Link to={'/cart'} className='link link-border-underline'><img src={Cart} alt="" height={"30px"}/></Link>
+            <Link to={'/admin'} className='link link-border-underline'><h3>Admin</h3></Link>
+            <Link class='link link-border-underline'><h3>Login/Register</h3></Link>
         </div>
     </div>
     <div id='bodyImg'>
@@ -57,10 +55,6 @@ const Home = (props) => {
                 <img src={Enjoy} alt="" id='helpIcon'/>
                 <h3>4. Enjoy!</h3>
             </div>
-            
-            
-            
-            
         </div>
     </div>
     </>

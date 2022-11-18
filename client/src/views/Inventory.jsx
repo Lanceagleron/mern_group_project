@@ -1,4 +1,5 @@
 import React, {  useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import axios from 'axios';
 
 const Inventory = () => {
@@ -60,13 +61,13 @@ const Inventory = () => {
             <nav>
                 <h1>Restaurant Name</h1>
                 <ul>
-                    <li>Dashboard</li>
-                    <li><button onClick={e => console.log("This button doesn't do anything yet")}>Logout</button></li>
+                    <li><Link to='/admin'>Dashboard</Link></li>
+                    {/* <li><button onClick={e => console.log("This button doesn't do anything yet")}>Logout</button></li> */}
                 </ul>
             </nav>
             <main>
                 <div>
-                    <h2>Inventory</h2>
+                    <h2>Menu Items</h2>
                     <table>
                         <thead>
                             <tr>

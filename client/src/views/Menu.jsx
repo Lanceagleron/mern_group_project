@@ -23,16 +23,15 @@ const Menu = (props) => {
     <div id='nav'>
         <div id='navItems'>
             <img src={Logo} alt="" id='logo'/>
-            <Link to={'/'} className='link link-border-underline'><h1 id='header'>Restaurant Name</h1></Link>
+            <Link to={'/'} class='link link-border-underline'><h1 id='header'>Restaurant Name</h1></Link>
         </div>
-
         <div id='navItems'>
-            <Link to={'/dev'} className='link link-border-underline'><h3>Admin</h3></Link>
-            <Link className='link link-border-underline'><h3>Login/Registration</h3></Link>
-            <Link className='link link-border-underline'><img src={Cart} alt="" height={"30px"}/></Link>
+            <Link to={'/cart'} class='link link-border-underline'><img src={Cart} alt="" height={"30px"}/></Link>
+            <Link to={'/admin'} class='link link-border-underline'><h3>Admin</h3></Link>
+            <Link class='link link-border-underline'><h3>Login/Register</h3></Link>
         </div>
     </div>
-    {/* {JSON.stringify(allItems)} */}
+
     <div className= 'container'>
         {
             allItems.map((eachItem, i) => {
