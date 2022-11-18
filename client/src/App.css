@@ -91,6 +91,7 @@ body {
   color: black;
   background-color: var(--background-color);
   padding: 15px;
+  margin-bottom: 10px;
   border: none;
   outline: none;
   position: relative;
