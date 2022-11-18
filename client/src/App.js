@@ -4,6 +4,7 @@ import Home from './views/Home';
 import Menu from './views/Menu';
 import Inventory from './views/Inventory';
 import DevMain from './views/DevMain';
+import Cart from './views/Cart';
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
       <Routes>
         <Route path='/' element={<Home/>}/>
         <Route path='/menu' element={<Menu/>}/>
+        <Route path='/cart' element={ <Cart /> }/>
         <Route path="/dev" element={ <DevMain />}/>
         <Route path='/admin/inventory' element={ <Inventory /> }/>
       </Routes>

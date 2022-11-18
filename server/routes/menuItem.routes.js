@@ -6,6 +6,7 @@ const {
     handleCreateMenuItem,
     handleGetAllMenuItems,
     handleGetMenuItemById,
+    // handleGetManyMenuItemsById,
     handleGetMenuItemByIdAndUpdate,
     handleDeleteMenuItemById
 } = require('../controllers/menuItem.controller');
@@ -13,7 +14,7 @@ const {
 // Routes
 router.post('/', handleCreateMenuItem);
 router.get('/', handleGetAllMenuItems);
-router.get('/:id', handleDeleteMenuItemById);
+router.get('/:id', handleGetMenuItemById);
 router.put('/:id', handleGetMenuItemByIdAndUpdate);
 router.delete('/:id', handleDeleteMenuItemById);
 

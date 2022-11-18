@@ -11,7 +11,7 @@ const Home = (props) => {
 
     const navigate = useNavigate();
 
-    const goToMenu = (notMongoId) => {
+    const goToMenu = () => {
         navigate('/menu');
     }
 
@@ -25,9 +25,10 @@ const Home = (props) => {
         </div>
 
         <div id='navItems'>
+            <Link class='link link-border-underline'>Login/Registration</Link>
+            <Link to={'/cart'} class='link link-border-underline'><img src={Cart} alt="" height={"30px"}/></Link>
             <Link to={'/dev'} class='link link-border-underline'><h3>Admin</h3></Link>
             <Link class='link link-border-underline'><h3>Login/Registration</h3></Link>
-            <Link class='link link-border-underline'><img src={Cart} alt="" height={"30px"}/></Link>
         </div>
     </div>
     <div id='bodyImg'>

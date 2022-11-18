@@ -4,6 +4,7 @@ const {
     getAllMenuItems,
     getMenuItemById,
     getMenuItemByIdAndUpdate,
+    getManyMenuItemsById,
     deleteMenuItemById
 } = require('../services/menuItem.service');
 
@@ -28,6 +29,16 @@ const handleGetAllMenuItems = async (req, res) => {
         return res.status(400).json(error);
     }
 }
+
+// const handleGetManyMenuItemsById = async (req, res) => {
+//     console.log("controller: handleGetManyMenuItemsById req.body: ", req.body);
+//     try {
+//         const selectedMenuItems = await getManyMenuItemsById(req.body);
+//         return res.json(selectedMenuItems);
+//     } catch (error) {
+//         return res.status(400).json(error);
+//     }
+// }
 
 const handleGetMenuItemById = async (req, res) => {
     console.log("controller: handleGetMenuItemById req.params: ", req.params.id);
@@ -66,6 +77,7 @@ module.exports = {
     handleCreateMenuItem: handleCreateMenuItem,
     handleGetAllMenuItems: handleGetAllMenuItems,
     handleGetMenuItemById: handleGetMenuItemById,
+    // handleGetManyMenuItemsById: handleGetManyMenuItemsById,
     handleGetMenuItemByIdAndUpdate: handleGetMenuItemByIdAndUpdate,
     handleDeleteMenuItemById: handleDeleteMenuItemById
 }
