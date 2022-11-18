@@ -43,7 +43,6 @@ const Menu = (props) => {
                     <Link className='link link-border-underline'><h3>Login/Register</h3></Link>
                 </div>
             </div>
-
             <form onSubmit={ handleSubmit } className= 'container'>
                 {
                     allItems.map((eachItem, i) => {
@@ -58,7 +57,21 @@ const Menu = (props) => {
                                         <input type="checkbox" id="item" className='checkBox' value={ eachItem._id } onChange={(e) => handleCheck(e) }/> <br />
                                         <span>{eachItem.name}</span> <br />
                                         <span>${eachItem.price}</span> <br />
-                                        
+                                        {
+                                            eachItem.inStock == true ? (
+                                                <div className='menuInfo'>
+                                                    <input type="checkbox" name="" id="item" className='checkBox'/> <br />
+                                                    <span for="item">{eachItem.name}</span> <br />
+                                                    <span>${eachItem.price}</span> <br />
+                                                </div>
+                                            ) : (
+                                                <div className='menuInfo'>
+                                                    <input type="checkbox" name="" id="item" className='checkBox' disabled/> <br />
+                                                    <span for="item"><s>{eachItem.name}</s> Unavailable</span>  <br />
+                                                    <span>${eachItem.price}</span> <br />
+                                                </div>
+                                            )
+                                        }  
                                     </div>
                                     
                                     
