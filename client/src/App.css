@@ -188,7 +188,7 @@ body {
   color: black;
   font-size: large;
   /* font-family: 'Montserrat', sans-serif; */
-  height: 85vh;
+  height: auto;
   width: 100%;
   padding: 20px;
   margin: 0 auto;

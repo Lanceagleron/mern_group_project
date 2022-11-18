@@ -43,12 +43,25 @@ const Menu = (props) => {
                         backgroundSize: 'cover',
                         backgroundRepeat: 'no-repeat',
                         backgroundPosition: 'center'}} className="itemCard" key={i} for="item">
-                            <div className='menuInfo'>
-                                <input type="checkbox" name="" id="item" className='checkBox'/> <br />
-                                <span for="item">{eachItem.name}</span> <br />
-                                <span>${eachItem.price}</span> <br />
+                            
+                                {
+                                    eachItem.inStock == true ? (
+                                        <div className='menuInfo'>
+                                            <input type="checkbox" name="" id="item" className='checkBox'/> <br />
+                                            <span for="item">{eachItem.name}</span> <br />
+                                            <span>${eachItem.price}</span> <br />
+                                        </div>
+                                    ) : (
+                                        <div className='menuInfo'>
+                                            <input type="checkbox" name="" id="item" className='checkBox' disabled/> <br />
+                                            <span for="item"><s>{eachItem.name}</s> Unavailable</span>  <br />
+                                            <span>${eachItem.price}</span> <br />
+                                        </div>
+                                    )
+                                }
                                 
-                            </div>
+                                
+                            
                             
                             
                     </div>
