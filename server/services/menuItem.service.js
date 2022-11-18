@@ -15,6 +15,12 @@ const getAllMenuItems = async () => {
     return allMenuItems;
 }
 
+// const getManyMenuItemsById = async (ids) => {
+//     console.log("service: getManyMenuItemsById");
+//     const selectedMenuItems = await MenuItem.find({'_id': { $in: ids }});
+//     return selectedMenuItems;
+// }
+
 const getMenuItemById = async (id) => {
     console.log("service: getMenuItemById");
     const oneMenuItem = await MenuItem.findById(id);
@@ -44,5 +50,6 @@ module.exports = {
     getAllMenuItems: getAllMenuItems,
     getMenuItemById: getMenuItemById,
     getMenuItemByIdAndUpdate: getMenuItemByIdAndUpdate,
+    // getManyMenuItemsById: getManyMenuItemsById,
     deleteMenuItemById: deleteMenuItemById
 }

@@ -18,6 +18,7 @@ const Menu = (props) => {
             <Link class='link link-border-underline'><img src={Cart} alt="" height={"25px"}/></Link>
         </div>
     </div>
+
     <div class= 'container'>
 
         <div class="itemCard">
